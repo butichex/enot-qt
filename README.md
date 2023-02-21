@@ -4,9 +4,30 @@
 В личном кабинете пользователя сделать конвертер со всех спаршенных валют в рубли и наоборот.
 
 
-# Требования к реализации:
+### Требования к реализации:
 - PHP 7.4+
 - Без фреймворков
 - Mysql или Postgresql
 - ООП
 - Composer
+
+### Структура проекта:
+```
+project/
+├── config/
+│   └── config.php
+├── controllers/
+│   └── do_login.php
+│   └── do_register.php
+│   └── do_logout.php
+│   └── do_currency.php
+│   └── do_parse.php
+├── views/
+│   └── login.php
+├── public/
+│   ├── css/
+│   ├── js/
+├── vendor/
+└── boot.php
+└── index.php
+```
