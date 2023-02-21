@@ -1,0 +1,17 @@
+{
+    "name": "tdyut/enot-qt",
+    "description": "enot-qt - тестовое задание на позицию Junior PHP - разработчик",
+    "type": "2",
+    "autoload": {
+        "psr-4": {
+            "Tdyut\\EnotQt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Тимур Дютин",
+            "email": "tdyutin@gmail.com"
+        }
+    ],
+    "require": {}
+}
