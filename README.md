@@ -18,11 +18,12 @@ project/
 ├── config/
 │   └── config.php
 ├── controllers/
-│   └── do_login.php
-│   └── do_register.php
-│   └── do_logout.php
-│   └── do_currency.php
-│   └── do_parse.php
+│   └── login.php
+│   └── register.php
+│   └── logout.php
+│   └── currency.php
+├── services/
+│   └── parser.php
 ├── views/
 │   └── login.php
 ├── public/
