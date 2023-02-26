@@ -4,20 +4,19 @@ class Store {
         this.expirationTime = 1000 * 10
     }
 
-    fetch() {
-        fetch(this.url, {
+    loadData() {
+        const data = fetch(this.url, {
             method: "post",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
         })
-            .then( (response) => response.json()).then(data => {
-                this.prepare(data)
-            }).then(() => app.createLayout()).then(() => app.addListeners()).then(() => app.getExchangeRate())
+            .then( (response) => response.json())
+        return data
     }
 
-    prepare(data) {
+    prepareData(data) {
         this.data = {}
         for (let key of data) {
             this.data[key['charcode']] = {'nominal': key['nominal'], 'value': parseFloat(key['value'])}
@@ -31,15 +30,21 @@ class App {
     constructor() {
         window.onload = this.init()
     }
+    
     init() {
-        this.store = new Store("/controllers/currency.php/")
-        this.store.fetch()
+        this.store = new Store("/controllers/do_currency.php/")
+        this.store.loadData().then((data) => {
+            this.store.prepareData(data)
+            this.createLayout()
+            this.addListeners()
+            this.getExchangeRate()
+        })
     }
 
     createLayout() {
         this.amount = document.querySelector("form input");
         this.exchangeRateText = document.querySelector("form .exchange-rate");
-        this.exchangeRateText.innerText = "Getting exchange rate...";
+        this.exchangeRateText.innerText = "Получаем курс валют...";
         this.dropList = document.querySelectorAll("form select"),
             this.getButton = document.querySelector("form button");
         this.exchangeIcon = document.querySelector("form .icon");
