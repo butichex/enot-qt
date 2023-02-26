@@ -114,7 +114,7 @@ class App {
     }
 
     setExchangeRateText(text) {
-        this.exchangeRateText.innerText = text;
+        this.exchangeRateText.innerText = text.toString().slice(0, 6) + " " + this.fromDropList.value;
     }
 }
 
