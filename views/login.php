@@ -25,7 +25,7 @@ if (check_auth()) {
 
         <?php flash() ?>
 
-      <form method="post" action="../controllers/do_login.php">
+      <form method="post" action="../controllers/login.php">
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
           <input type="text" class="form-control" id="username" name="username" required>

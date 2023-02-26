@@ -67,7 +67,7 @@ if (check_auth()) {
 
 
 
-          <form class="mt-5" method="post" action="controllers/do_logout.php">
+          <form class="mt-5" method="post" action="controllers/logout.php">
             <button type="submit" class="btn btn-primary">Выйти</button>
           </form>
 
@@ -77,7 +77,7 @@ if (check_auth()) {
 
             <?php flash(); ?>
 
-          <form method="post" action="controllers/do_register.php">
+          <form method="post" action="controllers/register.php">
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
               <input type="text" class="form-control" id="username" name="username" required>
