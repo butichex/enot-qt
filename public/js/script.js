@@ -32,7 +32,7 @@ class App {
     }
     
     init() {
-        this.store = new Store("/controllers/do_currency.php/")
+        this.store = new Store("/controllers/currency.php/")
         this.store.loadData().then((data) => {
             this.store.prepareData(data)
             this.createLayout()
